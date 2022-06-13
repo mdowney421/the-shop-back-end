@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
     'localhost', 'the-shop-back-end.herokuapp.com'
 ]
 
+WSGI_APPLICATION = 'config.wsgi.application'
 
 # Application definition
 
