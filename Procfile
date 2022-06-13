@@ -1,1 +1,1 @@
-web: gunicorn the-shop-back-end.wsgi
+web: gunicorn django_rest_api.wsgi
