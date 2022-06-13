@@ -1,1 +1,1 @@
-web: gunicorn django_rest_api.wsgi
+web: gunicorn --pythonpath django_rest_api django_rest_api.wsgi
