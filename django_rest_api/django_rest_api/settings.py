@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'the_shop_api',
+    'cart_api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -94,12 +95,19 @@ DATABASES = {
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost'
+    },
+    'cart': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cart',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'localhost'
     }
 }
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
-
+DATABASES['cart'].update(db_from_env)
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
