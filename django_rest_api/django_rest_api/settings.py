@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'the_shop_api',
     'cart_api',
+    'useraccount_api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -99,6 +100,13 @@ DATABASES = {
     'cart': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'cart',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'localhost'
+    },
+    'useraccount': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'useraccount',
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost'
