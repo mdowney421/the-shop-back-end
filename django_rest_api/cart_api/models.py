@@ -7,3 +7,4 @@ class Cart(models.Model):
     description = models.TextField()
     price = models.IntegerField()
     quantity = models.IntegerField()
+    email = models.TextField()
