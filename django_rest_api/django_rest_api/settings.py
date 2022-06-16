@@ -36,10 +36,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Application definition
 
 INSTALLED_APPS = [
+    'bcrypt',
     'corsheaders',
     'rest_framework',
     'the_shop_api',
     'cart_api',
+    'useraccount_api',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -102,12 +104,31 @@ DATABASES = {
         'USER': '',
         'PASSWORD': '',
         'HOST': 'localhost'
+    },
+    'useraccount': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'useraccount',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'localhost'
     }
 }
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 DATABASES['cart'].update(db_from_env)
+DATABASES['useraccount'].update(db_from_env)
+
+############
+# Bcrypt password Hashers
+############
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+]
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -135,6 +156,8 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 
