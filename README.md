@@ -17,6 +17,6 @@ The application employs full user authentication. Users can create an account wi
 * Heroku
 
 ## Contributors
-* Jordan Bank
-* Matt Downey
-* John Komninos
+* Jordan Bank - front end development
+* Matt Downey - front and back end development
+* John Komninos - front and back end development
